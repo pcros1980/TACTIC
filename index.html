@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FF8A3D" />
+  <meta name="description"
+        content="TACTIC — Translation and Corpus-Based Text Improvement Coach. Translate like a scholar with Coach Taci: AI-powered feedback, corpus-based suggestions and personalized coaching for academic translation." />
+  <title>TACTIC · Translate Like a Scholar with Coach Taci</title>
+
+  <!-- Inline fox-magnifier favicon so the build stays to three files + art -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='14' cy='14' r='9' fill='none' stroke='%23FF8A3D' stroke-width='3'/%3E%3Cline x1='20.5' y1='20.5' x2='28' y2='28' stroke='%23F97316' stroke-width='3.4' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Poppins (display) + Nunito (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a class="skip-link" href="#workspace">Skip to translation workspace</a>
+
+  <!-- ===================================================================
+       STICKY NAVIGATION  (glassmorphism)
+  ==================================================================== -->
+  <header class="nav" id="nav" data-nav>
+    <div class="container nav__inner">
+      <!-- Brand -->
+      <a class="brand" href="#top" aria-label="TACTIC home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" focusable="false">
+            <circle cx="13.5" cy="13.5" r="8.5" fill="none" stroke="currentColor" stroke-width="3" />
+            <circle cx="13.5" cy="13.5" r="8.5" fill="rgba(255,255,255,.55)" />
+            <line x1="19.6" y1="19.6" x2="27" y2="27" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="brand__word">TACTIC</span>
+      </a>
+
+      <!-- Primary navigation -->
+      <nav class="nav__menu" id="nav-menu" aria-label="Primary">
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#features">Features</a>
+        <a class="nav__link" href="#coach">Coach Taci</a>
+        <a class="btn btn--primary nav__cta" href="#workspace" data-start>Start Translating</a>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <button class="nav__toggle" id="nav-toggle" aria-label="Open menu"
+              aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================================================================
+         SCREEN 1 — LANDING / HERO
+    ==================================================================== -->
+    <section class="hero section" id="about" aria-labelledby="hero-title">
+      <!-- soft ambient blobs -->
+      <span class="hero__blob hero__blob--a" aria-hidden="true"></span>
+      <span class="hero__blob hero__blob--b" aria-hidden="true"></span>
+
+      <div class="container hero__grid">
+
+        <!-- LEFT: animated mascot -->
+        <div class="hero__stage" data-reveal="left">
+          <figure class="mascot" data-mascot>
+            <!-- decorative floating language chips -->
+            <span class="chip chip--id" aria-hidden="true">ID</span>
+            <span class="chip chip--en" aria-hidden="true">EN</span>
+            <span class="spark spark--1" aria-hidden="true"></span>
+            <span class="spark spark--2" aria-hidden="true"></span>
+            <span class="spark spark--3" aria-hidden="true"></span>
+
+            <div class="mascot__inner">
+              <img class="mascot__img" src="coach-taci.png"
+                   alt="Coach Taci, a friendly fox, inspecting text with a magnifying glass" />
+              <!-- eyelid overlay drives the blink on the fox's open eye -->
+              <span class="mascot__eyelid" aria-hidden="true"></span>
+              <!-- eye twinkles -->
+              <span class="mascot__twinkle mascot__twinkle--1" aria-hidden="true"></span>
+              <span class="mascot__twinkle mascot__twinkle--2" aria-hidden="true"></span>
+            </div>
+            <span class="mascot__shadow" aria-hidden="true"></span>
+          </figure>
+
+          <!-- speech bubble with typing effect -->
+          <div class="bubble" role="status" aria-live="polite">
+            <p class="bubble__text" data-typing
+               data-text="Hi! I'm Coach Taci. Let's improve your translation together!"></p>
+            <span class="bubble__tail" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <!-- RIGHT: headline + actions -->
+        <div class="hero__copy" data-reveal="right">
+          <span class="eyebrow"><span class="eyebrow__dot"></span> Academic translation coach</span>
+          <h1 class="hero__title" id="hero-title">
+            Translate Like a Scholar with <span class="hl">Coach Taci!</span>
+          </h1>
+          <p class="hero__sub">
+            Improve your academic translations through AI-powered feedback,
+            corpus-based suggestions, and personalized coaching — one paragraph at a time.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#workspace" data-start>
+              <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor"
+                      stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Start Translating
+            </a>
+            <button class="btn btn--ghost btn--lg" data-demo>
+              <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7-11-7z" fill="currentColor"/>
+              </svg>
+              Watch Demo
+            </button>
+          </div>
+
+          <ul class="hero__trust" aria-label="What students get">
+            <li><span class="tick">✓</span> Instant corpus-backed suggestions</li>
+            <li><span class="tick">✓</span> Friendly, plain-language coaching</li>
+            <li><span class="tick">✓</span> Built for linguistics &amp; translation students</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- scroll cue -->
+      <a class="hero__cue" href="#features" aria-label="Scroll to features">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ===================================================================
+         FEATURES
+    ==================================================================== -->
+    <section class="section features" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="eyebrow"><span class="eyebrow__dot"></span> How Taci coaches you</span>
+          <h2 class="section__title" id="features-title">Three ways to level up your translation</h2>
+          <p class="section__lead">
+            Coach Taci reads your draft the way a patient supervisor would — then shows you
+            exactly what to fix and why.
+          </p>
+        </header>
+
+        <div class="cards">
+          <article class="card feature" data-reveal data-reveal-delay="0">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 8.7l5.4-.8L12 3z"
+                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </span>
+            <h3 class="feature__title">AI-powered feedback</h3>
+            <p class="feature__body">
+              Get accuracy, grammar and academic-style scores in seconds, with feedback written
+              in plain language — not jargon.
+            </p>
+          </article>
+
+          <article class="card feature" data-reveal data-reveal-delay="120">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 6h10M4 12h16M4 18h12" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="19" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </span>
+            <h3 class="feature__title">Corpus-based suggestions</h3>
+            <p class="feature__body">
+              Swap everyday words for the phrasing real academic writing uses, backed by
+              patterns from large language corpora.
+            </p>
+          </article>
+
+          <article class="card feature" data-reveal data-reveal-delay="240">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 13c2.8 0 5-2.2 5-5s-2.2-5-5-5-5 2.2-5 5 2.2 5 5 5z"
+                fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M4 21c0-3.9 3.6-6 8-6s8 2.1 8 6" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <h3 class="feature__title">Personalized coaching</h3>
+            <p class="feature__body">
+              Taci remembers the mistakes you make most and nudges you toward better habits,
+              section by section.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         MEET COACH TACI
+    ==================================================================== -->
+    <section class="section coach" id="coach" aria-labelledby="coach-title">
+      <div class="container coach__grid">
+        <div class="coach__art" data-reveal="left">
+          <img class="coach__img" src="coach-taci-alt.png"
+               alt="Coach Taci waving and ready to help" />
+          <span class="coach__ring" aria-hidden="true"></span>
+        </div>
+
+        <div class="coach__copy" data-reveal="right">
+          <span class="eyebrow"><span class="eyebrow__dot"></span> Meet your coach</span>
+          <h2 class="section__title" id="coach-title">Say hi to Coach Taci 🦊</h2>
+          <p class="section__lead">
+            Taci is a translation coach with the energy of a study buddy. No red-pen shaming —
+            just clear, encouraging tips that help you sound like the scholar you're becoming.
+          </p>
+          <ul class="coach__points">
+            <li><strong>Honest, kind feedback.</strong> Taci celebrates what works before fixing what doesn't.</li>
+            <li><strong>Speaks your language.</strong> Source in Bahasa Indonesia, target in English — side by side.</li>
+            <li><strong>Always inspecting.</strong> That magnifying glass never misses a subject–verb slip.</li>
+          </ul>
+          <a class="btn btn--primary" href="#workspace" data-start>Translate with Taci</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCREEN 2 — TRANSLATION WORKSPACE
+    ==================================================================== -->
+    <section class="section workspace" id="workspace" aria-labelledby="workspace-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="eyebrow"><span class="eyebrow__dot"></span> Workspace</span>
+          <h2 class="section__title" id="workspace-title">Drop in your draft, side by side</h2>
+          <p class="section__lead">
+            Paste the Indonesian source on the left and your English translation on the right.
+            Switch sections with the tabs, then let Taci inspect it.
+          </p>
+        </header>
+
+        <div class="panels">
+
+          <!-- LEFT PANEL — SOURCE (IDN) -->
+          <article class="panel" data-reveal="left">
+            <div class="panel__top">
+              <h3 class="panel__title">
+                <span class="panel__flag panel__flag--id">ID</span>
+                Source Text <span class="panel__lang">(IDN)</span>
+              </h3>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="Source sections" data-tablist="src">
+              <button class="tab is-active" role="tab" aria-selected="true" tabindex="0"
+                      id="src-tab-abstrak" aria-controls="src-area" data-tab="abstrak">Abstrak</button>
+              <button class="tab" role="tab" aria-selected="false" tabindex="-1"
+                      id="src-tab-pendahuluan" aria-controls="src-area" data-tab="pendahuluan">Pendahuluan</button>
+              <button class="tab" role="tab" aria-selected="false" tabindex="-1"
+                      id="src-tab-kajian" aria-controls="src-area" data-tab="kajian">Kajian Pustaka</button>
+              <button class="tab" role="tab" aria-selected="false" tabindex="-1"
+                      id="src-tab-metode" aria-controls="src-area" data-tab="metode">Metode</button>
+              <button class="tab" role="tab" aria-selected="false" tabindex="-1"
+                      id="src-tab-temuan" aria-controls="src-area" data-tab="temuan">Temuan</button>
+              <button class="tab" role="tab" aria-selected="false" tabindex="-1"
+                      id="src-tab-diskusi" aria-controls="src-area" data-tab="diskusi">Diskusi</button>
+              <button class="tab" role="tab" aria-selected="false" tabindex="-1"
+                      id="src-tab-kesimpulan" aria-controls="src-area" data-tab="kesimpulan">Kesimpulan</button>
+            </div>
+
+            <div class="panel__field">
+              <textarea class="area" id="src-area" role="tabpanel" aria-labelledby="src-tab-abstrak"
+                        data-area="src" spellcheck="false"
+                        placeholder="Tempel teks sumber Bahasa Indonesia di sini…"></textarea>
+            </div>
+
+            <div class="panel__meta">
+              <span class="count" aria-live="polite"><b data-words="src">0</b> words</span>
+              <span class="count count--soft"><b data-chars="src">0</b> characters</span>
+            </div>
+          </article>
+
+          <!-- RIGHT PANEL — TARGET (ENG) -->
+          <article class="panel" data-reveal="right">
+            <div class="panel__top">
+              <h3 class="panel__title">
+                <span class="panel__flag panel__flag--en">EN</span>
+                Target Text <span class="panel__lang">(ENG)</span>
+              </h3>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="Target sections" data-tablist="tgt">
+              <button class="tab is-active" role="tab" aria-selected="true" tabindex="0"
+                      id="tgt-tab-abstract" aria-controls="tgt-area" data-tab="abstrak">Abstract</button>
+              <button class="tab" role="tab" aria-selected="false" tabindex="-1"
+                      id="tgt-tab-intro" aria-controls="tgt-area" data-tab="pendahuluan">Introduction</button>
+              <button class="tab" role="tab" aria-selected="false" tabindex="-1"
+                      id="tgt-tab-lit" aria-controls="tgt-area" data-tab="kajian">Literature Review</button>
+              <button class="tab" role="tab" aria-selected="false" tabindex="-1"
+                      id="tgt-tab-methods" aria-controls="tgt-area" data-tab="metode">Methods</button>
+              <button class="tab" role="tab" aria-selected="false" tabindex="-1"
+                      id="tgt-tab-findings" aria-controls="tgt-area" data-tab="temuan">Findings</button>
+              <button class="tab" role="tab" aria-selected="false" tabindex="-1"
+                      id="tgt-tab-discussion" aria-controls="tgt-area" data-tab="diskusi">Discussion</button>
+              <button class="tab" role="tab" aria-selected="false" tabindex="-1"
+                      id="tgt-tab-conclusion" aria-controls="tgt-area" data-tab="kesimpulan">Conclusion</button>
+            </div>
+
+            <div class="panel__field">
+              <textarea class="area" id="tgt-area" role="tabpanel" aria-labelledby="tgt-tab-abstract"
+                        data-area="tgt" spellcheck="false"
+                        placeholder="Type or paste your English translation here…"></textarea>
+            </div>
+
+            <div class="panel__meta">
+              <span class="count" aria-live="polite"><b data-words="tgt">0</b> words</span>
+              <span class="count count--soft"><b data-chars="tgt">0</b> characters</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- ACTION -->
+        <div class="workspace__action">
+          <button class="btn btn--primary btn--xl" id="analyze-btn" data-analyze>
+            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.1"/>
+              <line x1="16" y1="16" x2="21" y2="21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+            Analyze Translation
+          </button>
+          <p class="workspace__hint" data-analyze-hint>Coach Taci will inspect both panels and score your draft.</p>
+        </div>
+      </div>
+
+      <!-- LOADING OVERLAY -->
+      <div class="loader" id="loader" data-loader hidden>
+        <div class="loader__card" role="status" aria-live="assertive">
+          <div class="loader__scan" aria-hidden="true">
+            <img class="loader__fox" src="coach-taci.png" alt="" />
+            <div class="loader__doc">
+              <span class="loader__line"></span>
+              <span class="loader__line"></span>
+              <span class="loader__line short"></span>
+              <span class="loader__line"></span>
+              <span class="loader__line short"></span>
+              <!-- sweeping CSS magnifying glass -->
+              <span class="loader__lens">
+                <span class="loader__glass"></span>
+                <span class="loader__handle"></span>
+              </span>
+            </div>
+          </div>
+          <p class="loader__status">Coach Taci is inspecting your translation…</p>
+          <div class="loader__bar" role="progressbar" aria-label="Analysis progress"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-progress>
+            <span class="loader__fill"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCREEN 3 — EVALUATION RESULTS
+    ==================================================================== -->
+    <section class="section results" id="results" data-results aria-labelledby="results-title" hidden>
+      <div class="container">
+        <header class="section__head results__head">
+          <span class="eyebrow"><span class="eyebrow__dot"></span> Inspection complete</span>
+          <h2 class="section__title" id="results-title">Here's what Coach Taci found 🔍</h2>
+          <p class="section__lead">A quick read on your draft — plus exactly where to sharpen it.</p>
+        </header>
+
+        <!-- TOP METRICS -->
+        <div class="metrics" data-metrics>
+          <article class="metric" data-metric data-value="85" data-tone="good"
+                   role="progressbar" aria-label="Accuracy score" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="metric__ring">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="metric__track" cx="60" cy="60" r="52" />
+                <circle class="metric__bar" cx="60" cy="60" r="52" />
+              </svg>
+              <span class="metric__num"><span data-countup="85">0</span>%</span>
+            </div>
+            <h3 class="metric__label">Accuracy</h3>
+            <p class="metric__note">Meaning preserved from the source</p>
+          </article>
+
+          <article class="metric" data-metric data-value="70" data-tone="warn"
+                   role="progressbar" aria-label="Grammar score" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="metric__ring">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="metric__track" cx="60" cy="60" r="52" />
+                <circle class="metric__bar" cx="60" cy="60" r="52" />
+              </svg>
+              <span class="metric__num"><span data-countup="70">0</span>%</span>
+            </div>
+            <h3 class="metric__label">Grammar</h3>
+            <p class="metric__note">Subject–verb &amp; tense agreement</p>
+          </article>
+
+          <article class="metric" data-metric data-value="82" data-tone="brand"
+                   role="progressbar" aria-label="Academic style score" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="metric__ring">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="metric__track" cx="60" cy="60" r="52" />
+                <circle class="metric__bar" cx="60" cy="60" r="52" />
+              </svg>
+              <span class="metric__num"><span data-countup="82">0</span>%</span>
+            </div>
+            <h3 class="metric__label">Academic Style</h3>
+            <p class="metric__note">Formality &amp; register</p>
+          </article>
+        </div>
+
+        <!-- THREE-COLUMN DETAIL -->
+        <div class="results__grid">
+
+          <!-- LEFT: SUGGESTIONS -->
+          <article class="card suggest" data-reveal>
+            <header class="card__head">
+              <h3 class="card__title">Suggestions</h3>
+              <span class="card__count">3</span>
+            </header>
+
+            <ul class="suggest__list">
+              <li class="sugg" data-sugg style="--i:0">
+                <span class="sugg__tag sugg__tag--vocab">Vocabulary</span>
+                <div class="sugg__swap">
+                  <span class="sugg__from">“know”</span>
+                  <svg class="sugg__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span class="sugg__to">“investigate”</span>
+                </div>
+                <p class="sugg__why">Academic abstracts favour precise research verbs.</p>
+                <button class="sugg__apply" data-apply>Apply</button>
+              </li>
+
+              <li class="sugg" data-sugg style="--i:1">
+                <span class="sugg__tag sugg__tag--grammar">Grammar</span>
+                <div class="sugg__swap">
+                  <span class="sugg__from">“This research aim”</span>
+                  <svg class="sugg__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span class="sugg__to">“This research aims”</span>
+                </div>
+                <p class="sugg__why">Singular subject needs the “-s” verb form.</p>
+                <button class="sugg__apply" data-apply>Apply</button>
+              </li>
+
+              <li class="sugg" data-sugg style="--i:2">
+                <span class="sugg__tag sugg__tag--style">Academic Style</span>
+                <div class="sugg__swap">
+                  <span class="sugg__from">“a lot of”</span>
+                  <svg class="sugg__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span class="sugg__to">“a considerable number of”</span>
+                </div>
+                <p class="sugg__why">More formal quantifier for scholarly writing.</p>
+                <button class="sugg__apply" data-apply>Apply</button>
+              </li>
+            </ul>
+          </article>
+
+          <!-- CENTER: COMPARE -->
+          <article class="card compare" data-reveal data-reveal-delay="120">
+            <header class="card__head">
+              <h3 class="card__title">Compare Translation</h3>
+            </header>
+
+            <div class="compare__legend" aria-hidden="true">
+              <span class="legend"><span class="legend__sw legend__sw--add"></span> Improved</span>
+              <span class="legend"><span class="legend__sw legend__sw--mod"></span> Reworded</span>
+            </div>
+
+            <div class="compare__split">
+              <div class="compare__col">
+                <h4 class="compare__h">Your version</h4>
+                <p class="compare__text">
+                  This research aim to know the effect of corpus-based translation strategies
+                  on the academic translation quality of students. A lot of students still have
+                  difficulty to keep the meaning accuracy and academic style.
+                </p>
+              </div>
+
+              <div class="compare__divider" aria-hidden="true"><span>vs</span></div>
+
+              <div class="compare__col">
+                <h4 class="compare__h">Coach Taci's revision</h4>
+                <p class="compare__text">
+                  This research <mark class="m-add">aims</mark> to
+                  <mark class="m-add">investigate</mark> the effect of corpus-based translation
+                  strategies on <mark class="m-mod">students' academic translation quality</mark>.
+                  <mark class="m-mod">A considerable number of</mark> students still
+                  <mark class="m-mod">struggle to maintain</mark> meaning accuracy and academic style.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- RIGHT: COACH FEEDBACK -->
+          <article class="card coachsays" data-reveal data-reveal-delay="240">
+            <img class="coachsays__fox" src="coach-taci-alt.png" alt="Coach Taci leaning in with feedback" />
+            <header class="card__head">
+              <h3 class="card__title">Coach Taci Says…</h3>
+            </header>
+            <div class="coachsays__bubble">
+              <p class="coachsays__text" data-typing data-typing-deferred
+                 data-text="Great work! Your translation preserves the original meaning very well. Consider using more formal academic vocabulary in the introduction, and tighten the subject–verb agreement in your first sentence (“aim” → “aims”). Keep going — you're translating like a scholar! 🦊"></p>
+            </div>
+            <button class="btn btn--primary coachsays__again" data-reanalyze>Analyze again</button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================
+       FOOTER
+  ==================================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="brand brand--footer" href="#top" aria-label="TACTIC home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22" focusable="false">
+            <circle cx="13.5" cy="13.5" r="8.5" fill="none" stroke="currentColor" stroke-width="3" />
+            <line x1="19.6" y1="19.6" x2="27" y2="27" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="brand__word">TACTIC</span>
+      </a>
+      <p class="footer__tag">Translation and Corpus-Based Text Improvement Coach</p>
+      <p class="footer__fine">Made with 🦊 for translation &amp; linguistics students · © 2026 TACTIC</p>
+    </div>
+  </footer>
+
+  <!-- live region for analysis announcements (screen-reader only) -->
+  <p class="sr-only" aria-live="polite" data-sr-status></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
